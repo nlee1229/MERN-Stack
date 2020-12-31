@@ -79,4 +79,4 @@ var mean = function () {
 };
 console.log(food);
 
-var 
+var
