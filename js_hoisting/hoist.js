@@ -140,3 +140,4 @@ function learn() {
 learn();
 console.log(dojo);
 // prediction: san jose, brubank, seattle, san jose ---- output: san jose, brubank, seattle, san jose
+
