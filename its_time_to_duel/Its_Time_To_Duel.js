@@ -7,6 +7,7 @@ class Card {
 
 class Unit extends Card {
     constructor(name, cost, power, res) {
+        // super keyword is used to access and call functions on an object's parent
         super(name, cost);
         this.power = power;
         this.res = res;
@@ -31,10 +32,10 @@ class Effect extends Card {
         this.magnitude = magnitude;
     }
 
+    // converting a data type into another is known as type casting
     cast(target) {
         // check if target is a unit
         if (target instanceof Unit) {
-
             if (this.stat == "res") {
                 target.res += this.magnitude;
                 if (this.magnitude > 0) {
