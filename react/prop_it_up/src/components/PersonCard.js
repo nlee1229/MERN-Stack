@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class PersonCard extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class PersonCard extends Component {
     }
 
     increaseAge = () => {
-        // this.state. age is coming from the age on line 8
+        // this.state.age is coming from the age on line 8
         this.setState({ age: this.state.age + 1 })
     };
 
@@ -22,12 +23,12 @@ class PersonCard extends Component {
         const { name, age, hairColor } = this.props;
         return (
             <div>
-                <h1>{name}</h1>
+                <h1 htmlClass="display-1">{name}</h1>
                 <h3>Age: {this.state.age}</h3>
                 <h3>Hair Color: {hairColor}</h3>
 
-                <button onClick={this.increaseAge}>Happy Birthday!</button>
-                <button onClick={this.decreaseAge}>Click to gain a year!</button>
+                <button className="btn btn-outline-danger" onClick={this.increaseAge}>Happy Birthday!</button>
+                <button className="btn btn-outline-danger" onClick={this.decreaseAge}>Click to gain a year!</button>
             </div>
         );
     }
