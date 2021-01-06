@@ -41,17 +41,21 @@ function combineSortedArrays(arr1, arr2) {
     var new_arr = [];
     var low_num = arr1[0];
     // finds shortest arr
-    if (arr1.length < arr2.length) {
+    if (arr1.length < arr2.length && arr1.length > 0) {
         var arrLength = arr1.length;
-    } else {
+    } else if (arr1.length > arr2.length && arr2.length > 0) {
         var arrLength = arr2.length;
+    } else if (arr1 == 0) {
+        var arrLength = arr2.length;
+    } else if (arr2 == 0) {
+        var arrLength = arr1.length;
     }
     // finds lowest num
-    if (arr1 == 0) {
+    if (arr1.length == 0) {
         for (let i = 0; i < arrLength; i++) {
             new_arr.push(arr2[i])
         }
-    } else if (arr2 == 0) {
+    } else if (arr2.length == 0) {
         for (let i = 0; i < arrLength; i++) {
             new_arr.push(arr1[i])
         }
