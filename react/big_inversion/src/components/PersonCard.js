@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// const PersonCard = props => {
-// const increaseAge = () => {
-//     this.setState({ age: this.state.age + 1 })
-// };
-
-// const decreaseAge = () => {
-//     this.setState({ age: this.state.age - 1 })
-// };
-
 // useState is a hook that will be imported from react. 
 // we can access the current state via state and then change the state via setState
 const PersonCard = props => {
@@ -27,9 +18,6 @@ const PersonCard = props => {
             clickCount: state.clickCount - 1
         })
     }
-
-
-
 
     return (
         < div >
