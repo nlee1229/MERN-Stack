@@ -3,14 +3,13 @@ import React, { useState } from 'react';
 
 const Form = (props) => {
     const { inputs, setInputs } = props;
-    // const [firstName, setFirstName] = useState("");
-    // const [lastName, setLastName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [confirmPassword, setConfirmPassword] = useState("");
+    const [firstNameError, setFirstNameError] = useState("");
 
-    // e is representative of a block of info every time a client hits a key
     const onChange = e => {
+        setFirstName(e.target.value);
+        if (e.target.value.length < 2) {
+            setFirstNameError("First name must be more than 2 characters!");
+        }
         setInputs({
             ...inputs,
             // value is what gets caputred when the client changes things
