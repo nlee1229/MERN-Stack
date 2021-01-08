@@ -15,10 +15,13 @@ const Form = (props) => {
     });
 
     const onChange = e => {
+        // Set inputs function is updating input state, but in order to do that you have to copy in the previous values otherwise it would get lost. The new things the current thing being updated with it’s value
         setInputs({
             // copying whatever was there before
+            //Inputs starts off as an object
             ...inputs,
-            // value is what gets captured when the client changes things
+            // value is what gets captured when the client changes things...Target is whatever triggered the event
+            // The square brackets around e.target.the name is crucial.Allows us to dynamically say that our key is the variable.  
             [e.target.name]: e.target.value
         });
         // validations
