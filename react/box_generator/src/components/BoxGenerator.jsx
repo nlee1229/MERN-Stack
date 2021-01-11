@@ -9,6 +9,8 @@ const BoxGenerator = (props) => {
     e.preventDefault();
     setAllBoxes([...allBoxes, color])
   }
+  const validator = []
+
 
   return (
     <div>
