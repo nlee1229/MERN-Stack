@@ -17,10 +17,9 @@ const BoxGenerator = (props) => {
       <h1>{color}</h1>
       {/* event when submit happens */}
       <form onSubmit={addColor}>
-        <input onChange={(e) => {
+        <input type="text" onChange={(e) => {
           setColor(e.target.value);
-
-        }} type="text" />
+        }} />
         <button>Add!</button>
       </form>
 
