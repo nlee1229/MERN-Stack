@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 
-const BoxGenerator = (props) => {
+const BoxGenerator = () => {
   // Empty array is essentially a list of boxes in array that will be used to be displayed
   const [allBoxes, setAllBoxes] = useState([]);
   // Keep track of what color user types in
   const [color, setColor] = useState("");
+
+
   const addColor = (e) => {
     e.preventDefault();
+    // Adding another item(color) to list(allBoxes)
     setAllBoxes([...allBoxes, color])
   }
-  const validator = []
+  // const validator = []
 
 
   return (
     <div>
       <h1>{color}</h1>
-      {/* event when submit happens */}
+      {/* Event when submit happens */}
       <form onSubmit={addColor}>
         <input type="text" onChange={(e) => {
           setColor(e.target.value);
