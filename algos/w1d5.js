@@ -68,7 +68,7 @@ function quickSort(arr, startIdx = 0, endIdx = arr.length - 1) {
 const arr = [1, 2, 8, 4, 5, 6]
 console.log(arrayPartition(arr)); // should log an index between 0 and 5
 console.log(arr); // should be mutated and partitioned around the returned index
-}
+
 
 console.log(quickSort([1, 5, 2, 8, 3, 4]));
   // should log [1, 2, 3, 4, 5, 8]
