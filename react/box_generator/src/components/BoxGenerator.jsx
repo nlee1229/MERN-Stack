@@ -34,5 +34,4 @@ const BoxGenerator = () => {
   );
 };
 
-
 export default BoxGenerator;
