@@ -14,8 +14,6 @@ const AxiosPokemonApi = props => {
     // note that we have to reference .data to get that inner data out
     // the empty array is a list of variables that we are trying to keep track of
 
-
-
     return (
         <div>
             <h1>Welcome to the Pokemon Api!</h1>
