@@ -1,11 +1,18 @@
 import './App.css';
-import LukeAPI from './components/LukeAPI.jsx';
+import Form from './components/Form.jsx';
 import { Router } from '@reach/router';
+import People from './components/People';
+import Planet from './components/Planet';
 
 function App() {
   return (
     <div className="App">
-      <LukeAPI />
+      <div className="title">STARWARS API</div>
+      <Router>
+        <Form path="/" />
+        <People path="/people/:collectionID" />
+        <Planet path="/planets/:collectionID" />
+      </Router>
     </div>
   );
 }

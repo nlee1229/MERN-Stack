@@ -1,27 +1,6 @@
 import React from 'react';
 import { Router, Link } from '@reach/router';
 
-// function Number(props) {
-//     const { num, color, bc } = props;
-//     if (isNaN(+num)) {
-//         if (num === "home") {
-//             return (
-//                 <h1>Welcome home you guys!</h1>
-//             );
-//         } else {
-//             return (
-//                 <h1 style={{ backgroundColor: color, color: bc }}>The word is: {num}</h1>
-//             );
-//         }
-//     } else {
-//         let temp = Number(num);
-//         return (
-//             < h1 > The number is: {typeof (temp)}</h1 >
-//         );
-//     }
-// }
-// export default Number;
-
 function General(props) {
 
     let param = props.stuff;
