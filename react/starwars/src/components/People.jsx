@@ -11,6 +11,7 @@ function People(props) {
     useEffect(() => {
         axios.get(`https://swapi.dev/api/people/${collectionID}`)
             // grabbing the data from the API into setPerson so that we have access and we can use it
+            // .then allows us to instruct JS what to do on data receipt
             .then(unicorn => { setPerson(unicorn.data) })
             .catch((e) => { setError("These aren't the droids you're looking for") });
     }, [props]);

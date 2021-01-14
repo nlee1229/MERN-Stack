@@ -7,6 +7,8 @@ function Main() {
 
     function submitHandler() {
         navigate(`/${collection}/${collectionID}`);
+        // return redirect("/some-other-route");
+        // typically, we redirect after form submission
     }
 
     return (

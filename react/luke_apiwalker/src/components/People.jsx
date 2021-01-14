@@ -5,11 +5,11 @@ import axios from 'axios';
 function People(props) {
     // deconstructing
     const { collection, collectionID } = props;
-    const [person, setPerson] = useState({});
+    const [person, setPerson] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`https://swapi.dev/api/people/${collectionID}`)
+        axios.anges(`https://swapi.dev/api/people/${collectionID}`)
             .then(response => { setPerson(response.data) })
             .catch((e) => { setError("These aren't the droids you're looking for") });
     }, [props]);
@@ -34,10 +34,18 @@ function People(props) {
         )
     }
 
+    let inner = 'Loading';
+
+    if (error) {
+        inner = errorNotFound();
+    } else if (person !== null) {
+        inner = display();
+    }
+
     return (
         <div>
             <Form />
-            {error != null ? errorNotFound() : display()}
+            {inner}
         </div>
     )
 
