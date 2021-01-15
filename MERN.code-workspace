@@ -1,0 +1,74 @@
+{
+	"folders": [
+		{
+			"path": "javascript/its_time_to_duel"
+		},
+		{
+			"path": "react/first_project"
+		},
+		{
+			"path": "react/first_jsx"
+		},
+		{
+			"path": "algos"
+		},
+		{
+			"path": "react/prop_it_up"
+		},
+		{
+			"path": "react/putting_it_together"
+		},
+		{
+			"path": "react/big_inversion"
+		},
+		{
+			"path": "react/hook_form"
+		},
+		{
+			"path": "react/box_generator"
+		},
+		{
+			"path": "react/tabs"
+		},
+		{
+			"path": "react/todo_list"
+		},
+		{
+			"path": "react/todo_list_redo"
+		},
+		{
+			"path": "react/practice"
+		},
+		{
+			"path": "react/pokemon_api"
+		},
+		{
+			"path": "react/axios_pokemon_api"
+		},
+		{
+			"path": "react/routing_practice"
+		},
+		{
+			"path": "react/luke_apiwalker"
+		},
+		{
+			"path": "express/postman_pokemon"
+		},
+		{
+			"path": "react/starwars"
+		},
+		{
+			"path": "express/HelloExpress"
+		},
+		{
+			"path": "express/faker"
+		},
+		{
+			"path": "express/faker_api"
+		},
+		{
+			"path": "express/Modules"
+		}
+	],
+	"settings": {}
+}
