@@ -9,7 +9,7 @@ function People(props) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.anges(`https://swapi.dev/api/people/${collectionID}`)
+        axios.get(`https://swapi.dev/api/people/${collectionID}`)
             .then(response => { setPerson(response.data) })
             .catch((e) => { setError("These aren't the droids you're looking for") });
     }, [props]);
