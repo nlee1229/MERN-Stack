@@ -71,6 +71,9 @@
 		},
 		{
 			"path": "mongoDB/HelloMongoose"
+		},
+		{
+			"path": "mongoDB/Jokes"
 		}
 	],
 	"settings": {}

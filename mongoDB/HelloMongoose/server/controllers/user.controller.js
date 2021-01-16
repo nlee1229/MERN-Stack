@@ -7,9 +7,9 @@ module.exports.findAllUsers = (req, res) => {
 };
 
 module.exports.findOneSingleUser = (req, res) => {
-	User.findOne({ _id: req.params.id })
-		.then(oneSingleUser => res.json({ user: oneSingleUser }))
-		.catch(err => res.json({ message: "Something went wrong", error: err }));
+  User.findOne({ _id: req.params.id })
+    .then(oneSingleUser => res.json({ user: oneSingleUser }))
+    .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
 
 module.exports.createNewUser = (req, res) => {
