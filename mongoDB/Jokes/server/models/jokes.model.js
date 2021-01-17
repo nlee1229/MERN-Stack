@@ -10,12 +10,13 @@ const JokeSchema = new mongoose.Schema(
         punchline: {
             type: String,
             required: [true, "Punchline is required"],
-            minlength: [3, "Setup must be at least 3 characters long"]
+            minlength: [3, "Punchline must be at least 3 characters long"]
         },
     },
     { timestamps: true }
 );
 
+// create a constructor function for our model and store in variable 'Joke'
 const Joke = mongoose.model("joke", JokeSchema);
 
 module.exports = Joke;
