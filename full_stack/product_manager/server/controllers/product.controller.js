@@ -15,3 +15,10 @@ module.exports.createProduct = (request, response) => {
         .then(product => response.json(product))
         .catch(err => response.json(err));
 }
+
+// retrieve all products in database
+module.exports.getAllProducts = (request, response) => {
+    Product.findOne({ _id: request.params.id })
+        .then(product => response.json(product))
+        .catch(err => response.json(err));
+}
