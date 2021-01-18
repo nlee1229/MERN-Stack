@@ -18,7 +18,14 @@ module.exports.createProduct = (request, response) => {
 
 // retrieve all products in database
 module.exports.getAllProducts = (request, response) => {
+    Product.find({})
+        .then(products => response.json(products))
+        .catch(err => response.json(err));
+}
+
+// shows us the details of one particular person
+module.exports.getProduct = (request, response) => {
     Product.findOne({ _id: request.params.id })
         .then(product => response.json(product))
-        .catch(err => response.json(err));
+        .catch(err => response.json(err))
 }
