@@ -74,6 +74,12 @@
 		},
 		{
 			"path": "mongoDB/Jokes"
+		},
+		{
+			"path": "full_stack/my_project"
+		},
+		{
+			"path": "full_stack/product_manager"
 		}
 	],
 	"settings": {}
