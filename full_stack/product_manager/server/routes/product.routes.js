@@ -9,4 +9,8 @@ module.exports = function (app) {
     app.get('/api/products', ProductController.getAllProducts);
     // ----- PATH TO SHOW ONE PRODUCT BY ID ----- //
     app.get('/api/products/:id', ProductController.getProduct);
+    // ----- PATH TO UPDATE PRODUCT BY ID ----- //
+    app.put('/api/products/:id', ProductController.updateProduct);
+    // ----- PATH TO DELETE PRODUCT BY ID ----- //
+    app.delete('/api/products/:id', ProductController.deleteProduct);
 }
