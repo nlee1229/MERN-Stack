@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import axios from 'axios';
+import DeleteButton from './DeleteButton';
 
 export default props => {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/products/")
+            .then(res => setProducts(res.data));
+    }, [])
+
+
     // sending a request to api tp delete product
-    const { removeFromDom } = props;
-    const deleteProduct = (productId) => {
-        axios.delete('http://localhost:8000/api/products/' + productId)
-            .then(res => {
-                // remove from dom removes it from view
-                removeFromDom(productId)
-            })
+    const removeFromDom = productId => {
+        setProducts(products.filter(product => product._id != productId));
     }
 
     return (
         <div>
             <br /><hr />
             <h1>All Products:</h1>
-            {props.products.map((product, idx) => {
-                return <p key={idx}>
-                    <Link to={`/products/${product._id}`}>
-                        {product.title}
-                    </Link>
-                    <button onClick={e => { deleteProduct(product._id) }}>Delete</button>
-                </p>
-
+            {products.map((product, idx) => {
+                return (
+                    <p key={idx}>
+                        <Link to={`/products/${product._id}`}>
+                            {product.title}
+                        </Link>
+                        <DeleteButton productId={product._id} successCallback={() => removeFromDom(product._id)} />
+                    </p>
+                )
             })}
         </div >
     )
