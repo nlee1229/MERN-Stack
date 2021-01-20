@@ -8,12 +8,15 @@ export default () => {
     // ---- this has products we're going to have to send down ---- //
     const [products, setProducts] = useState([]);
     const [loaded, setLoaded] = useState(false);
+    const [errors, setErrors] = useState([]);
+    // const [product, setProduct] = useState({});
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/products/')
             .then(res => {
                 setProducts(res.data)
                 setLoaded(true);
+                console.log(res.data);
             });
     }, [])
 
@@ -26,13 +29,23 @@ export default () => {
         axios.post('http://localhost:8000/api/products/', product)
             .then(res => {
                 setProducts([...products, res.data]);
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+                const errorResponse = err.response.data.errors;
+                const errorArr = [];
+                for (const key of Object.keys(errorResponse)) {
+                    errorArr.push(errorResponse[key].message)
+                }
+                setErrors(errorArr);
             })
     }
 
     return (
         <div>
-            <ProductForm onSubmitProp={createProduct} initialTitle="" initialPrice="" initialDescription="" buttonType="Create" />
-            <hr />
+            <ProductForm onSubmitProp={createProduct} initialTitle="" initialPrice="" initialDescription="" buttonType="Create" errors={errors} />
+            <br />
             {loaded && <ProductList products={products} removeFromDom={removeFromDom} />}
         </div>
     )

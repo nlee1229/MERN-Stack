@@ -19,7 +19,7 @@ export default props => {
 
     const updateProduct = product => {
         axios.put("http://localhost:8000/api/products/" + id, product)
-            .then(res => console.log(res));
+            .then(res => { navigate("/products/" + id) });
     }
     // .then(res => console.log(res));
 

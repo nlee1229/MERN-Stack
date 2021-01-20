@@ -4,21 +4,11 @@ import axios from 'axios';
 import DeleteButton from './DeleteButton';
 
 export default props => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        axios.get("http://localhost:8000/api/products/")
-            .then(res => setProducts(res.data));
-    }, [])
-
-
-    // sending a request to api tp delete product
-    const removeFromDom = productId => {
-        setProducts(products.filter(product => product._id != productId));
-    }
+    const { products, removeFromDom } = props;
 
     return (
         <div>
-            <br /><hr />
+            <hr />
             <h1>All Products:</h1>
             {products.map((product, idx) => {
                 return (
@@ -27,6 +17,7 @@ export default props => {
                             {product.title}
                         </Link>
                         <DeleteButton productId={product._id} successCallback={() => removeFromDom(product._id)} />
+                        <Link to={`/products/${product._id}/edit`}>Edit</Link>
                     </p>
                 )
             })}

@@ -14,7 +14,7 @@ module.exports.createProduct = (request, response) => {
         description
     })
         .then(product => response.json(product))
-        .catch(err => response.json(err));
+        .catch(err => response.status(400).json(err));
 }
 
 // retrieve all products in database
@@ -38,8 +38,11 @@ module.exports.updateProduct = (request, response) => {
         .catch(err => response.json(err))
 }
 
+// delete on product by id 
 module.exports.deleteProduct = (request, response) => {
     Product.deleteOne({ _id: request.params.id })
         .then(deleteConfirmation => response.json(deleteConfirmation))
         .catch(err => response.json(err))
 }
+
+// validations
