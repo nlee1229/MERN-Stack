@@ -80,6 +80,9 @@
 		},
 		{
 			"path": "full_stack/product_manager"
+		},
+		{
+			"path": "full_stack/authors"
 		}
 	],
 	"settings": {}

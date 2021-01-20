@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export default props => {
-    // keep track of what is being types via useState hook
+    // keep track of what is being typed via useState hook
     const { initialTitle, initialPrice, initialDescription, onSubmitProp, buttonType, errors } = props;
     const [title, setTitle] = useState(initialTitle);
     const [price, setPrice] = useState(initialPrice);
