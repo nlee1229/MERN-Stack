@@ -83,6 +83,9 @@
 		},
 		{
 			"path": "full_stack/authors"
+		},
+		{
+			"path": "full_stack/authors1"
 		}
 	],
 	"settings": {}
