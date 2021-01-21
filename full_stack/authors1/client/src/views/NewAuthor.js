@@ -23,8 +23,7 @@ export default () => {
     return (
         <>
             { errors ? errors.map((err, index) => <p key={index}>{err}</p>) : ""}
-            < AuthorForm form={createAuthor} />
+            < AuthorForm initialName="" form={createAuthor} />
         </>
     )
-
 }

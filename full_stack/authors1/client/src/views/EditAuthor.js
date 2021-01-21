@@ -6,6 +6,21 @@ import { navigate } from '@reach/router';
 export default (props) => {
     const { id, } = props;
     const [errors, setErrors] = useState([]);
+    const [author, setAuthor] = useState({});
+    const [authorExists, setAuthorExists] = useState(false);
+    const [loaded, setLoaded] = useState(false);
+    ;
+    // prefilling the form with object for edit page
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/authors/" + id)
+            .then(response => {
+                setAuthor(response.data);
+                setLoaded(true);
+                if (response.data.name != undefined) {
+                    setAuthorExists(true);
+                }
+            })
+    }, [])
 
     const editAuthor = formData => {
         axios.put('http://localhost:8000/api/authors/' + id, formData)
@@ -24,7 +39,7 @@ export default (props) => {
     return (
         <>
             { errors ? errors.map((err, index) => <p key={index}>{err}</p>) : ""}
-            < AuthorForm form={editAuthor} />
+            { loaded && < AuthorForm initialName={author.name} form={editAuthor} />}
         </>
     )
 

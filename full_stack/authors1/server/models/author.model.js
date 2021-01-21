@@ -8,4 +8,6 @@ const AuthorSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
+// author is going to be the table name. AUthor is the key to the value of our schema
+// Author is the collection and the documents are being created in the AuthorSchema
 module.exports.Author = mongoose.model("Author", AuthorSchema);

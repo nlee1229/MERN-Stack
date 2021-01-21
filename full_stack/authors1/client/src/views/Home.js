@@ -17,12 +17,12 @@ export default () => {
             .catch(err => console.log("Not working. Come back soon."))
     }, []);
 
+    // function that takes in a current list of authors and when that function is called inthe authors list
     const setAllAuthors = (filteredAuthors) => {
         setAuthors(filteredAuthors)
     }
 
     return (
-
         <>
             {loaded && <AuthorList authors={authors} allAuthors={setAllAuthors} />}
         </>

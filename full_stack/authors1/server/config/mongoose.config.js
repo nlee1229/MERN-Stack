@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//authordb is our collection
 mongoose.connect("mongodb://localhost/authordb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -17,7 +17,8 @@ export default props => {
     return (
         <div>
             <h1>Favorite Authors</h1>
-            <h4>We have quotes by:</h4>
+            <Link to="/new">Add an author</Link>
+            <p style={{ color: "purple" }}>We have quotes by:</p>
             <table className="table table-hover">
                 <thead>
                     <tr>
