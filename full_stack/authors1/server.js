@@ -6,7 +6,7 @@ require("./server/config/mongoose.config"); // has to be above the 'require rout
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); //(MAYBE) allows us to access our API from front end to back using URLS - Eric
+app.use(express.urlencoded({ extended: true })); //(MAYBE) allows us to access our API from front end to back using URLS
 
 require("./server/routes/author.routes")(app);
 
